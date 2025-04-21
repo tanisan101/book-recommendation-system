@@ -9,4 +9,4 @@ Most users struggle to find similar books after finishing one they love. This ap
 ---
 
 ## 🚀 Solution
-Uses a collaborative filtering approach
+Uses a collaborative filtering approach suggesting books based on the books that a user enters of his/her choice.
