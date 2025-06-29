@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Discovery Hub - AI-Powered Book Recommendations</title>
+    <meta name="description" content="Discover your next favorite book with AI-powered recommendations based on your reading preferences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <h1 class="header-title">
+                    <span class="header-icon">📚</span>
+                    Book Discovery Hub
+                </h1>
+                <p class="header-subtitle">Discover your next favorite book with AI-powered recommendations</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Search Section -->
+                <section class="search-section">
+                    <div class="search-container">
+                        <form id="searchForm" class="search-form">
+                            <div class="search-input-group">
+                                <input 
+                                    type="text" 
+                                    id="searchInput" 
+                                    class="search-input" 
+                                    placeholder="Enter a book title, author, or describe what you're looking for..."
+                                    required
+                                    minlength="2"
+                                    autocomplete="off"
+                                >
+                                <button type="submit" class="search-button" id="searchButton">
+                                    <span class="search-button-text">Find Books</span>
+                                    <span class="search-button-icon">🔍</span>
+                                </button>
+                            </div>
+                            <div class="search-error" id="searchError"></div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Loading State -->
+                <section class="loading-section" id="loadingSection" style="display: none;">
+                    <div class="loading-container">
+                        <div class="loading-spinner">
+                            <svg class="spinner" viewBox="0 0 50 50">
+                                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke="#4a90e2" stroke-width="2" stroke-miterlimit="10"/>
+                            </svg>
+                        </div>
+                        <p class="loading-text">Finding perfect book recommendations for you...</p>
+                        <div class="skeleton-cards">
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                            <div class="skeleton-card"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section class="results-section" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h2 class="results-title">Recommended Books</h2>
+                        <p class="results-subtitle" id="resultsSubtitle"></p>
+                    </div>
+                    <div class="results-grid" id="resultsGrid">
+                        <!-- Book cards will be inserted here -->
+                    </div>
+                </section>
+
+                <!-- Empty State -->
+                <section class="empty-state" id="emptyState">
+                    <div class="empty-state-content">
+                        <div class="empty-state-icon">📖</div>
+                        <h3 class="empty-state-title">Ready to discover amazing books?</h3>
+                        <p class="empty-state-description">
+                            Enter a book you love, an author you enjoy, or describe the type of story you're in the mood for. 
+                            Our AI will find books that match your taste perfectly.
+                        </p>
+                        <div class="example-searches">
+                            <p class="example-title">Try searching for:</p>
+                            <div class="example-tags">
+                                <button class="example-tag" data-search="mystery novels like Agatha Christie">Mystery like Agatha Christie</button>
+                                <button class="example-tag" data-search="romantic fantasy books">Romantic Fantasy</button>
+                                <button class="example-tag" data-search="science fiction space opera">Space Opera Sci-Fi</button>
+                                <button class="example-tag" data-search="historical fiction World War 2">WWII Historical Fiction</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">
+                    Powered by AI • Built with ❤️ for book lovers
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="scripts/api.js"></script>
+    <script src="scripts/modelIntegration.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
